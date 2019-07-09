@@ -11,9 +11,6 @@ void setup()
  //Starts serial communication at 9600 bps
  Serial.begin(9600);
  //Sets digital pin 4 as OUTPUT
- pinMode(4, OUTPUT);
- //Turns off pin 4
- digitalWrite(4, pinVal);
 }
 void loop()
 {
@@ -29,33 +26,32 @@ void serialEvent()
 
  //Checks if the data type is the same as the one in the
  //Voice Schema
- if (dataType == BV_STR)
+ if (dataType == BV_INT)
  {
  //Checks the stored value in byteData by getData() and
  //changes the value of the pin
- if (bvSerial.strData.length() > 0){
-
-          svSerial.sendToBV(bvSerial.strData);
-          switch (bvSerial.strData) {
-          case "stanga":
+ if (bvSerial.intData > 0){
+       bvSerial.sendToBV(bvSerial.intData);
+          switch (bvSerial.intData) {
+          case 3: //left
             // statements
             break;
-          case "dreapta":
+          case 4: //right
             // statements
             break;
-          case "spate":
+          case 6: //back
             // statements
             break;
-          case "fata":
+          case 7: //straight
             // statements
             break;
-          case "stop":
+          case 5: //stop
             // statements
             break;
-           case "incet":
+           case 2: //fast
             // statements
             break; 
-          case "repede":
+          case 1: //slow
             // statements
             break;
           default:
