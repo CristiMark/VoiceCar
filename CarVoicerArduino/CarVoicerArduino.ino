@@ -4,8 +4,7 @@
 BitVoicerSerial bvSerial = BitVoicerSerial();
 //Stores the data type retrieved by getData()
 byte dataType = 0;
-//Stores the state of pin 4
-byte pinVal = 0;
+
 void setup()
 {
  //Starts serial communication at 9600 bps
@@ -14,8 +13,7 @@ void setup()
 }
 void loop()
 {
- //Updates the state of pin 4 on every loop
- digitalWrite(4, pinVal);
+ 
 }
 //This function runs every time serial data is available
 //in the serial buffer after a loop
