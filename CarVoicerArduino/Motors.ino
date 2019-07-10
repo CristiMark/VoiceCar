@@ -23,3 +23,7 @@ void GoStraight(int speed){
     digitalWrite(in1, LOW );
     digitalWrite(in2, HIGH);   
   }
+    void Stop(){
+    digitalWrite(in1, HIGH );
+    digitalWrite(in2, HIGH);   
+  }

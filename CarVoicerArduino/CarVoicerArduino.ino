@@ -30,6 +30,7 @@ void serialEvent()
  //changes the value of the pin
  if (bvSerial.intData > 0){
        bvSerial.sendToBV(bvSerial.intData);
+       setupDriveMotor();
           switch (bvSerial.intData) {
           case 3: //left
             // statements
@@ -46,11 +47,11 @@ void serialEvent()
           case 5: //stop
             // statements
             break;
-           case 2: //fast
-            // statements
+           case 2: //fast         
+            GoStraight(255);
             break; 
           case 1: //slow
-            // statements
+            GoStraight(122);
             break;
           default:
             // statements
